@@ -2,9 +2,67 @@
 <hmtl>
     <head>
         <title>
-            bottom text lol
+            Fuck your train lmfao 🚃
         </title>
+        <style>
+            .blink {
+                animation: blinker 1s step-start infinite;
+              }
+              
+              @keyframes blinker {
+                50% {opacity: 0;
+                }
+              }             
+        </style>
     </head>
     <body>
+        <div><b>NW BRUN</b></div>
+        to<br>
+        <b>NYP NYP</b>
+        <b>SEC</b>
+        <br>One Way
+        <br>1 Adult
     </body>
-</hmtl>
+
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<div id="qrcode"></div>
+<script type="text/javascript">
+
+function generate_QR(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: generate_QR(128),
+	width: 128,
+	height: 128,
+	correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+Tap to enlarge
+<div class="blink">BLINK</div> 
+<p id ="dates"></p>
+
+<script>
+var countDownDate = new Date();
+countDownDate.setHours(countDownDate.getHours()+2);
+countDownDate.setMinutes(countDownDate.getMinutes()+44);
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate.getTime() - now;
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("dates").innerHTML = "Expires in 00:0" + hours + ":"
+    + minutes + ":" + seconds;
+    }, 1000);
+</script>
+
+</html>
